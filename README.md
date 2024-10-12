@@ -34,3 +34,5 @@ We're creating a blog app with these features:
 4. Create views, templates, and URLs
 
 Feel free to suggest improvements or just say hi!
+
+![Django Architecture](images/DjangoArchitecture.png)
