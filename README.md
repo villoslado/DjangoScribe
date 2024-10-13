@@ -1,6 +1,6 @@
-# DjangoBlogify
+# DjangoScribe
 
-Hey there, fellow developers! 👋 Welcome to DjangoBlogify, your go-to Django project for building a blogging platform.
+Hey there, fellow developers! 👋 Welcome to DjangoScribe, your go-to Django project for building a blogging platform.
 
 ## What's the deal?
 

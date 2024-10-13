@@ -3,6 +3,12 @@ from django.db import models
 from django.utils import timezone
 
 
+# Creating a custom manager to retrieve all posts that have a PUBLISHED status
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Post.Status.PUBLISHED)
+
+
 class Post(models.Model):
 
     class Status(models.TextChoices):
@@ -11,7 +17,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250)
-    # short label that contains only letters, numbers, underscores, hyphens
+    # Short label that contains only letters, numbers, underscores, and hyphens
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -26,6 +32,8 @@ class Post(models.Model):
         choices=Status,
         default=Status.DRAFT,
     )
+    objects = models.Manager()  # Default manager
+    published = PublishedManager()  # Our custom manager
 
     class Meta:
         ordering = ["-publish"]
