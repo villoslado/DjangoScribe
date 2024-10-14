@@ -59,12 +59,11 @@ def post_share(request, post_id):
                 post.get_absolute_url(),
             )
             subject = (
-                f"{cd["name"]} ({cd["email"]}) "
-                f"recommends you read {post.title}"
+                f"{cd['name']} ({cd['email']}) " f"recommends you read {post.title}"
             )
             message = (
                 f"Read {post.title} at {post_url}\n\n"
-                f"{cd["name"]}\'s comments: {cd["comments"]}"
+                f"{cd['name']}'s comments: {cd['comments']}"
             )
             send_mail(
                 subject=subject,
@@ -82,5 +81,6 @@ def post_share(request, post_id):
         {
             "post": post,
             "form": form,
+            "sent": sent,
         },
     )
