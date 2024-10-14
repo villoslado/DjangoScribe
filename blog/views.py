@@ -4,7 +4,7 @@ from .models import Post
 
 
 def post_list(request):
-    posts = Post.published.all()
+    post_list = Post.published.all()
     # Pagination with 8 posts per page
     paginator = Paginator(post_list, 8)
     page_number = request.GET.get("page", 1)
