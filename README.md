@@ -1,6 +1,8 @@
 # DjangoScribe
 
-Hey there, fellow developers! 👋 Welcome to DjangoScribe, your go-to Django project for building a blogging platform.
+Hey there! 👋 
+
+Welcome to DjangoScribe, your Django project for building a blogging platform.
 
 ## What's the deal?
 
